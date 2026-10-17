@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Warehouse Instructions</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+#message {
+    font-size: clamp(40px, 9vw, 90px);
+    font-weight: 800;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    margin: 0;
+}
+
+#code {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+<main>
+    <h1 id="message">PLEASE PLACE ITEMS HERE</h1>
+    <div id="code"></div>
+</main>
+
+<script>
+const messages = {
+    "001": "PLEASE PLACE ITEMS HERE",
+    "002": "PLEASE CHECK THE SHIPPING LABEL",
+    "003": "PLEASE MOVE ITEMS TO THE STAGING AREA",
+    "004": "DO NOT STACK THESE BOXES",
+    "005": "PLEASE CONTACT THE SUPERVISOR"
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id") || "001";
+
+const message = messages[id];
+
+if (message) {
+    document.getElementById("message").textContent = message;
+    document.getElementById("code").textContent =
+        "Instruction " + id;
+
+    document.title = "Instruction " + id;
+} else {
+    document.getElementById("message").textContent =
+        "MESSAGE NOT FOUND";
+
+    document.getElementById("code").textContent =
+        "Please check the QR code.";
+}
+</script>
+
+</body>
+</html>
