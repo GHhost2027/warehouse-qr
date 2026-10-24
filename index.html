@@ -130,7 +130,6 @@ const messages = {
 
 const params = new URLSearchParams(window.location.search);
 const id = (params.get("id") || "MSG1").toUpperCase();
-alert("網址參數：" + window.location.search + "\n讀取到的 ID：" + id);
 const message = messages[id];
 
 if (message) {
