@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-HK">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Warehouse Instructions</title>
-
+<title>恩泉團契十周年晚宴</title>
 <style>
 * {
     box-sizing: border-box;
@@ -14,76 +13,141 @@
 body {
     margin: 0;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
-    background: white;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff8f0, #fff0f5, #f0fff4);
+    color: #7a1745;
+    font-family: Arial, "Microsoft JhengHei", sans-serif;
+    position: relative;
+    overflow-wrap: anywhere;
+}
+
+body::before {
+    content: "🌸 🍃 🌷 🍃 🌸";
+    position: fixed;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(20px, 5vw, 36px);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+body::after {
+    content: "🌿 🌺 🍃 🌼 🌿";
+    position: fixed;
+    bottom: 12px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(20px, 5vw, 36px);
+    opacity: 0.8;
+    pointer-events: none;
 }
 
 main {
     width: 100%;
     max-width: 900px;
+    margin: auto;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 #message {
-    font-size: clamp(40px, 9vw, 90px);
+    font-size: clamp(32px, 7vw, 76px);
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.35;
     overflow-wrap: anywhere;
     margin: 0;
+    text-align: center;
+    white-space: pre-line;
 }
 
 #code {
-    margin-top: 30px;
+    margin-top: 24px;
     font-size: 18px;
-    color: #666;
+    color: #99627a;
+    text-align: center;
 }
 </style>
 </head>
-
 <body>
 <main>
-    <h1 id="message">PLEASE PLACE ITEMS HERE</h1>
+    <h1 id="message">歡迎嚟到💝恩泉團契💝🎊🎉10周年晚宴聚餐🎉🎊</h1>
     <div id="code"></div>
 </main>
-
 <script>
 const messages = {
+    "MSG1": "歡迎嚟到💝恩泉團契💝🎊🎉10周年晚宴聚餐🎉🎊",
+
+    "MSG2": "🎁恭喜你，你們這台人每人各得大利是一封🧧。",
+
     "001": "🎁 恭喜你！獲得神秘禮物一份！",
-    "002": "😂 請揀一位朋友，向佢講：「你今日份外有型！",
+    "002": "😂 請揀一位朋友，向佢講：「你今日份外有型！」",
     "003": "🎁 請到1號枱枱底或凳底找尋一個利是封，然後讀出利是封嘅內容，祝你好運！",
-    "004": "😂 請揀一位朋友，同佢講：「今晚你真係好靚！",
+    "004": "😂 請揀一位朋友，同佢講：「今晚你真係好靚！」",
     "005": "😜 今次未中獎，食完呢餐就會轉運！",
-    "006": "😜  請向對面嘅朋友送出一個超級燦爛笑容！ 😂",
-    "007": "😜 今次未中獎，今晚食多兩啖！",
-    "008": "🎁 請到2號枱枱底或凳底找尋一個利是封，然後讀出利是封嘅內容，祝你好運！",
-    "009": "😜 今次未中獎！但恭喜你完成今晚抽獎！🎉",
-    "010": "🍰 恭喜你！獲得甜品一份！🍰"
+    "006": "😜 請向對面嘅朋友送出一個超級燦爛笑容！😂",
+    "007": "😜 今次未中獎，今晚食多兩啖！",
+    "008": "🎁 請到2號枱枱底或凳底找尋一個利是封，然後讀出利是封嘅內容，祝你好運！",
+    "009": "😜 今次未中獎！但恭喜你完成今晚抽獎！🎉",
+    "010": "🍰 恭喜你！獲得甜品一份！🍰",
+
+    "011": "😜 今次未中獎！唔緊要，好運可能喺下一輪！🍀",
+    "012": "😂 請向全場送出一個最燦爛嘅笑容！",
+    "013": "🎤 請大聲講一句：「恩泉團契十周年快樂！」🎉",
+    "014": "😜 今次未中獎！但你嘅笑容已經值回票價！😁",
+    "015": "👏 請為同枱每一位朋友鼓掌三秒！",
+    "016": "😂 請用三個字形容今晚嘅心情！",
+    "017": "🍀 今次未中獎，祝你下一輪好運連連！",
+    "018": "💝 請向身邊一位朋友講一句祝福說話！",
+    "019": "🎉 請同同枱朋友一齊講：「十周年快樂！」",
+    "020": "😜 今次未中獎！食多啲，開心啲！",
+    "021": "😂 請擺出一個最有型嘅姿勢，保持三秒！",
+    "022": "🎊 請同身邊嘅朋友擊掌，互相祝福！",
+    "023": "🍀 好運正在路上！請耐心等待下一輪！",
+    "024": "😁 請講出今晚你最期待嘅一件事！",
+    "025": "💝 請向恩泉團契送上一句十周年祝福！",
+    "026": "😜 今次未中獎！但今晚你一定食得開心！",
+    "027": "👏 請為今晚所有籌備同工送上熱烈掌聲！",
+    "028": "😂 請用一個動作表示你今晚有幾開心！",
+    "029": "🎉 請同全枱朋友一齊講：「今晚玩得開心！」",
+    "030": "🧧 今次未中獎！祝大家身體健康、平安喜樂！",
+    “G08”: “得獎人：______________\n\n🎁🎁恭喜你！”,
+    “G18”: “得獎人：______________\n\n🎁🎁恭喜你！”,
+    “G28”: “得獎人：______________\n\n🎁🎁恭喜你！”,
+    “G38”: “得獎人：______________\n\n🎁🎁恭喜你！”,
+    “G48”: “得獎人：______________\n\n🎁🎁恭喜你！”,
+    “G58”: “得獎人：______________\n\n🎁🎁恭喜你！”,
+    “G68”: “得獎人：______________\n\n🎁🎁恭喜你！”,
+    “G78”: “得獎人：______________\n\n🎁🎁恭喜你！”,
+    “G88”: “得獎人：______________\n\n🎁🎁恭喜你！”,
+    “G98”: “得獎人：______________\n\n🎁🎁恭喜你！”
 };
 
 const params = new URLSearchParams(window.location.search);
-const id = params.get("id") || "001";
+const id = (params.get("id") || "MSG1").toUpperCase();
 
 const message = messages[id];
 
 if (message) {
     document.getElementById("message").textContent = message;
     document.getElementById("code").textContent =
-        "Instruction " + id;
+        id.startsWith("MSG") ? "" : "抽獎編號 " + id;
 
-    document.title = "Instruction " + id;
+    document.title = id + " - 恩泉團契十周年晚宴";
 } else {
     document.getElementById("message").textContent =
         "MESSAGE NOT FOUND";
 
     document.getElementById("code").textContent =
-        "Please check the QR code.";
+        "請檢查 QR Code 編號。";
 }
 </script>
-
 </body>
 </html>
