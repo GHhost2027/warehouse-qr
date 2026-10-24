@@ -133,7 +133,8 @@ const id = (params.get("id") || "MSG1").toUpperCase();
 const message = messages[id];
 
 if (message) {
-    document.getElementById("message").textContent = message;
+    document.getElementById("message").textContent = message;
+document.getElementById("message").style.whiteSpace = "pre-line";
     document.getElementById("code").textContent =
         id.startsWith("MSG") ? "" : "抽獎編號 " + id;
 
